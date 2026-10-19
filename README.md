@@ -84,41 +84,51 @@ AWX Web Interface
 
 ## 🎬 Video Tutorials
 
-### Video 1: Introduction to Ansible AWX
+Learn Ansible AWX architecture and follow practical tutorials to understand installation and automation workflows.
 
-Learn about AWX, Ansible Tower, inventories, credentials, and automation job templates.
+### 📺 Video 1: Introduction to Ansible AWX
 
-## 📺 Watch the Installation Tutorial
+Understand AWX, Ansible Tower, inventories, credentials, job templates, and enterprise automation.
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=AU14jrXl6Oc">
     <img
-      src="https://img.youtube.com/vi/AU14jrXl6Oc/maxresdefault.jpg"
-      alt="Watch the Ansible AWX installation tutorial"
-      width="800"
+      src="https://img.youtube.com/vi/AU14jrXl6Oc/hqdefault.jpg"
+      alt="Watch Introduction to Ansible AWX on YouTube"
+      width="720"
     />
   </a>
 </p>
 
 <p align="center">
-  <strong>▶ Click the thumbnail to watch the full tutorial on YouTube.</strong>
+  <a href="https://www.youtube.com/watch?v=AU14jrXl6Oc">
+    <strong>▶ Watch Video 1 on YouTube</strong>
+  </a>
 </p>
 
-### Video 2: What is AWX?
+---
+
+### 🚀 Video 2: What Is AWX?
+
+Learn what AWX is, how it works, and how it helps manage Ansible automation through a web interface.
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=jr5qLyWAQJg">
     <img
-      src="https://img.youtube.com/vi/jr5qLyWAQJg/maxresdefault.jpg"
-      alt="Watch the Ansible AWX installation tutorial"
-      width="800"
+      src="https://img.youtube.com/vi/jr5qLyWAQJg/hqdefault.jpg"
+      alt="Watch What Is AWX on YouTube"
+      width="720"
     />
   </a>
 </p>
 
 <p align="center">
-  <strong>▶ Click the thumbnail to watch the full tutorial on YouTube.</strong>
+  <a href="https://www.youtube.com/watch?v=jr5qLyWAQJg">
+    <strong>▶ Watch Video 2 on YouTube</strong>
+  </a>
 </p>
+
+
 ---
 
 ## 💻 System Requirements
