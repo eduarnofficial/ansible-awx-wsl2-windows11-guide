@@ -88,16 +88,37 @@ AWX Web Interface
 
 Learn about AWX, Ansible Tower, inventories, credentials, and automation job templates.
 
-**Video:** [Watch on YouTube](https://youtu.be/AU14jrXl6Oc)
+## 📺 Watch the Installation Tutorial
 
-### Video 2: AWX Installation on Windows 11
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=AU14jrXl6Oc">
+    <img
+      src="https://img.youtube.com/vi/AU14jrXl6Oc/maxresdefault.jpg"
+      alt="Watch the Ansible AWX installation tutorial"
+      width="800"
+    />
+  </a>
+</p>
 
-Follow the practical installation process using WSL2, Ubuntu, Docker, Minikube, and the AWX Operator.
+<p align="center">
+  <strong>▶ Click the thumbnail to watch the full tutorial on YouTube.</strong>
+</p>
 
-**Video:** [Watch on YouTube](https://youtu.be/jr5qLyWAQJg)
+### Video 2: What is AWX?
 
-> Replace these placeholder links with your actual tutorial URLs.
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=jr5qLyWAQJg">
+    <img
+      src="https://img.youtube.com/vi/jr5qLyWAQJg/maxresdefault.jpg"
+      alt="Watch the Ansible AWX installation tutorial"
+      width="800"
+    />
+  </a>
+</p>
 
+<p align="center">
+  <strong>▶ Click the thumbnail to watch the full tutorial on YouTube.</strong>
+</p>
 ---
 
 ## 💻 System Requirements
