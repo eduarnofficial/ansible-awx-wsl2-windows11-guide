@@ -1,75 +1,72 @@
-🚀 Install Ansible AWX on Windows 11 Using WSL2, Ubuntu & Minikube
-A step-by-step guide to deploying Ansible AWX locally on Windows 11 using WSL2, Ubuntu 22.04 LTS, Docker, Minikube, Kubernetes, and the AWX Operator.
 
-This repository provides the installation commands, Kubernetes manifests, verification steps, and troubleshooting guidance needed to build a local AWX automation lab.
+# 🚀 Install Ansible AWX on Windows 11 Using WSL2, Ubuntu 22.04 & Minikube
 
-Important: This repository is intended for learning, development, and lab environments. It is not a production-ready deployment guide.
-📚 Table of Contents
-Overview
-Architecture
-Video Tutorials
-System Requirements
-Prerequisites
-Installation Guide
-1. Prepare Ubuntu
-2. Verify Docker
-3. Create the Lab Directory
-4. Install kubectl
-5. Install Minikube
-6. Start the Kubernetes Cluster
-7. Deploy the AWX Operator
-8. Verify the Operator
-9. Create the AWX Instance
-10. Monitor Installation
-11. Retrieve the Admin Password
-12. Access the AWX Web Interface
-Troubleshooting
-Useful Commands
-Project Structure
-Security Notes
-Learning Resources
-Contributing
-License
-🎯 Overview
-Ansible AWX is an open-source web-based platform for managing, scheduling, and running Ansible automation jobs.
+A step-by-step guide to installing **Ansible AWX locally on Windows 11** using WSL2, Ubuntu 22.04 LTS, Docker, Minikube, Kubernetes, and the AWX Operator.
 
-It provides a centralized interface for:
+> **Note:** This repository is intended for learning, development, and lab environments. It is not a production deployment guide.
 
-Managing inventories and hosts.
-Creating and executing job templates.
-Managing credentials and access controls.
-Scheduling automation jobs.
-Tracking job execution and logs.
-Integrating automation into operational workflows.
-This lab deploys AWX on a local Kubernetes cluster powered by Minikube.
+---
 
-🏗️ Architecture
-The lab uses the following components:
+## 📚 Table of Contents
 
+- [Overview](#-overview)
+- [Architecture](#-architecture)
+- [Video Tutorials](#-video-tutorials)
+- [System Requirements](#-system-requirements)
+- [Installation Guide](#-installation-guide)
+- [Troubleshooting](#-troubleshooting)
+- [Useful Commands](#-useful-commands)
+- [Project Structure](#-project-structure)
+- [Security Notes](#-security-notes)
+- [Learning Resources](#-learning-resources)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-Component	Purpose
-Windows 11	Host operating system
-WSL2	Linux environment on Windows
-Ubuntu 22.04 LTS	Command-line and development environment
-Docker	Container runtime used by Minikube
-Minikube	Local Kubernetes cluster
-kubectl	Kubernetes command-line tool
-AWX Operator	Manages the AWX application lifecycle
-AWX Web	Provides the AWX web interface and API
-AWX Task	Executes automation jobs
-PostgreSQL	Stores AWX application data
-Deployment flow
+---
 
+## 🎯 Overview
+
+Ansible AWX is an open-source web-based platform for managing and running Ansible automation jobs.
+
+Features include:
+
+- Centralized automation management
+- Inventory and credential management
+- Job templates and scheduling
+- Automation execution logs
+- Role-based access control
+- API-based integrations
+
+This project demonstrates how to deploy AWX on a local Kubernetes cluster using Minikube.
+
+## 🏗️ Architecture
+
+| Component | Purpose |
+|---|---|
+| Windows 11 | Host operating system |
+| WSL2 | Linux environment |
+| Ubuntu 22.04 LTS | Installation environment |
+| Docker | Container runtime |
+| Minikube | Local Kubernetes cluster |
+| kubectl | Kubernetes command-line tool |
+| AWX Operator | Manages the AWX deployment |
+| AWX Web | Web interface and API |
+| AWX Task | Executes automation jobs |
+| PostgreSQL | Application database |
+
+### Architecture Diagram
+
+```text
 Windows 11
     |
     v
 WSL2 - Ubuntu 22.04
     |
     v
-Docker Engine
+Docker
     |
     v
-Minikube - Kubernetes
+Minikube / Kubernetes
     |
     +-- AWX Operator
     |
@@ -81,52 +78,52 @@ Minikube - Kubernetes
     |
     v
 AWX Web Interface
-🎬 Video Tutorials
-Use these videos alongside the written instructions.
+```
 
-Video 1: What Is Ansible AWX / Ansible Tower?
-Understand AWX architecture, automation management, inventories, credentials, and job templates.
-Video link: Add your YouTube URL here
-Video 2: Install Ansible AWX on Windows 11
-Follow the hands-on installation using WSL2, Ubuntu, Docker, Minikube, and the AWX Operator.
-Video link: Add your YouTube URL here
-Replace the placeholder links with your actual video URLs before publishing.
-💻 System Requirements
+---
 
-Component	Recommended configuration
-Operating system	Windows 11 64-bit
-Linux environment	Ubuntu 22.04 LTS on WSL2
-Virtualization	Enabled in BIOS/UEFI
-CPU	4 or more logical processors
-RAM	16 GB recommended; 8 GB minimum for a constrained lab
-Free disk space	40 GB or more
-Container runtime	Docker Engine accessible from WSL2
-Internet connection	Required to download images and packages
-Actual resource requirements depend on the workload, image sizes, and other applications running on the host.
+## 🎬 Video Tutorials
 
-🔧 Prerequisites
-Before beginning, ensure that:
+### Video 1: Introduction to Ansible AWX
 
-WSL2 is installed and working.
-Ubuntu 22.04 LTS is installed.
-Docker is running and accessible from Ubuntu.
-Windows virtualization features are enabled.
-You have a working internet connection.
-If Docker is installed on Windows through Docker Desktop, enable WSL integration for your Ubuntu distribution.
+Learn about AWX, Ansible Tower, inventories, credentials, and automation job templates.
 
-Official references:
+**Video:** [Watch on YouTube](https://youtu.be/AU14jrXl6Oc)
 
-Install WSL
-Docker Desktop with WSL
-Minikube documentation
-AWX Operator repository
-🛠️ Installation Guide
-Run the following commands inside your Ubuntu WSL2 terminal, unless otherwise stated.
+### Video 2: AWX Installation on Windows 11
 
-1. Prepare Ubuntu
-Update Ubuntu and install the required utilities.
+Follow the practical installation process using WSL2, Ubuntu, Docker, Minikube, and the AWX Operator.
 
+**Video:** [Watch on YouTube](https://youtu.be/jr5qLyWAQJg)
 
+> Replace these placeholder links with your actual tutorial URLs.
+
+---
+
+## 💻 System Requirements
+
+| Component | Recommended Configuration |
+|---|---|
+| Operating System | Windows 11 64-bit |
+| Linux Distribution | Ubuntu 22.04 LTS on WSL2 |
+| Virtualization | Enabled in BIOS/UEFI |
+| CPU | 4 or more logical processors |
+| RAM | 16 GB recommended; 8 GB minimum for a constrained lab |
+| Free Disk Space | 40 GB or more |
+| Container Runtime | Docker |
+| Internet | Required for downloading packages and images |
+
+Actual requirements depend on your workload and host configuration.
+
+---
+
+# 🛠️ Installation Guide
+
+Run the following commands inside your Ubuntu WSL2 terminal unless otherwise specified.
+
+## Step 1: Update Ubuntu and Install Prerequisites
+
+```bash
 sudo apt update
 sudo apt upgrade -y
 
@@ -143,36 +140,43 @@ sudo apt install -y \
   iptables \
   python3 \
   python3-pip
-Verify the tools:
+```
 
+Verify the installed tools:
 
+```bash
 git --version
 curl --version
 python3 --version
-2. Verify Docker
-Minikube will use Docker as its driver.
+```
 
+## Step 2: Verify Docker
 
+Ensure Docker is running and accessible from Ubuntu.
+
+```bash
 docker --version
 docker version
 docker info
 docker run --rm hello-world
-All commands should complete successfully before proceeding.
+```
 
-If Docker is unavailable, configure Docker Engine or Docker Desktop WSL integration first.
+If Docker commands fail, verify your Docker Engine installation or enable Docker Desktop WSL integration.
 
-3. Create the Lab Directory
-Keep the lab files inside your Linux home directory for better WSL filesystem performance.
+## Step 3: Create the Lab Directory
 
-
+```bash
 mkdir -p ~/awx-lab
 cd ~/awx-lab
-4. Install kubectl
+```
+
+## Step 4: Install kubectl
+
 Configure the official Kubernetes package repository.
 
-The commands below use the Kubernetes v1.35 package repository. This selects the repository channel; it does not guarantee that every installed component will be version v1.35.
+The following example uses the Kubernetes v1.35 repository channel.
 
-
+```bash
 sudo mkdir -p /etc/apt/keyrings
 
 curl -fsSL \
@@ -187,17 +191,17 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 
 sudo apt update
 sudo apt install -y kubectl
-Verify the installation:
-
 
 kubectl version --client
-Official documentation: Install kubectl on Linux
+```
 
-5. Install Minikube
-Download the Linux AMD64 binary.
+Documentation: [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 
-These commands assume an AMD64/x86-64 Ubuntu environment. Check your architecture with uname -m if needed.
+## Step 5: Install Minikube
 
+These commands assume an AMD64/x86-64 Linux environment.
+
+```bash
 curl -LO \
   https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
@@ -206,44 +210,50 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 rm minikube-linux-amd64
 
 minikube version
-Official documentation: Install Minikube
+```
 
-6. Start the Kubernetes Cluster
-Start Minikube with the Docker driver and allocate resources for the lab.
+Documentation: [Install Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
+## Step 6: Start the Minikube Cluster
 
+```bash
 minikube start \
   --driver=docker \
   --cpus=4 \
   --memory=6144 \
   --disk-size=30g
-This configuration allocates four CPUs, approximately 6 GiB of memory, and a 30 GiB disk to Minikube. It does not reserve all of your Windows host resources exclusively for Kubernetes.
+```
 
 Verify the cluster:
 
-
+```bash
 minikube status
 kubectl get nodes
 kubectl get pods -A
-The Minikube node should eventually show Ready.
+```
 
-7. Deploy the AWX Operator
-For this example, the AWX Operator version is pinned to 2.7.2 so that the manifest is reproducible.
+The Minikube node should eventually report `Ready`.
 
-Create the operator directory:
+## Step 7: Deploy the AWX Operator
 
+Set the example operator version:
 
+```bash
 export AWX_OPERATOR_VERSION=2.7.2
 
 mkdir -p ~/awx-lab/operator
 cd ~/awx-lab/operator
-Create the kustomization.yaml file:
+```
 
+Create the configuration file:
 
+```bash
 nano kustomization.yaml
-Add the following configuration:
+```
 
+Add the following content to `kustomization.yaml`:
 
+```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -255,82 +265,103 @@ images:
     newTag: 2.7.2
 
 namespace: awx
-Save the file, then deploy the operator:
+```
 
+Apply the operator configuration:
 
+```bash
 kubectl apply -k .
-Check the resources:
+```
 
+Verify the deployment:
 
+```bash
 kubectl get deployments -n awx
 kubectl get pods -n awx
-The operator deployment creates the awx namespace as part of this configuration.
+```
 
-Official repository: Ansible AWX Operator
+Documentation: [AWX Operator GitHub Repository](https://github.com/ansible/awx-operator)
 
-8. Verify the Operator
+## Step 8: Verify the AWX Operator
+
 Wait for the operator deployment to become ready:
 
-
+```bash
 kubectl rollout status \
   deployment/awx-operator-controller-manager \
   -n awx \
   --timeout=5m
-Follow its logs:
+```
 
+View the operator logs:
 
+```bash
 kubectl logs \
   -n awx \
   deployment/awx-operator-controller-manager \
   -c awx-manager \
   -f
-Press Ctrl+C to stop following the logs.
+```
 
-If the operator pod fails, inspect its details:
+Press `Ctrl+C` to stop following the logs.
 
+Inspect pod status and events if necessary:
 
+```bash
 kubectl get pods -n awx -o wide
 kubectl describe pods -n awx
-Troubleshooting an unavailable proxy image
-Some operator installations may encounter problems pulling the kube-rbac-proxy image.
+```
 
-Inspect the pod events first:
+### Optional: Troubleshoot the Proxy Image
 
+If the `kube-rbac-proxy` image cannot be pulled, inspect the pod events first.
 
+```bash
 kubectl describe pod \
   -n awx \
   -l control-plane=controller-manager
-If the configured image is unavailable, verify an alternative image and tag before updating the deployment. Do not assume that every image hosted at an alternative registry is interchangeable.
+```
 
-For example, the following override was used in this lab:
+If the configured image is unavailable, verify an alternative image and tag before updating the deployment.
 
+The following alternative was used in this lab:
 
+```bash
 kubectl -n awx set image \
   deployment/awx-operator-controller-manager \
   kube-rbac-proxy=quay.io/brancz/kube-rbac-proxy:v0.15.0
+```
+
 Verify the rollout:
 
-
+```bash
 kubectl rollout status \
   deployment/awx-operator-controller-manager \
   -n awx
 
 kubectl get pods -n awx
-Use this override only if the alternative image is available and compatible with your operator configuration.
+```
 
-9. Create the AWX Instance
-Create a directory for the AWX custom resource:
+Only use an alternative image after confirming its availability and compatibility.
 
+## Step 9: Create the AWX Instance
 
+Create the instance directory:
+
+```bash
 mkdir -p ~/awx-lab/instance
 cd ~/awx-lab/instance
+```
+
 Create the manifest:
 
-
+```bash
 nano awx-demo.yml
-Add:
+```
 
+Add the following YAML:
 
+```yaml
 ---
 apiVersion: awx.ansible.com/v1beta1
 kind: AWX
@@ -342,212 +373,250 @@ metadata:
 spec:
   service_type: NodePort
   nodeport_port: 30080
-Apply the configuration:
+```
 
+Apply the manifest:
 
+```bash
 kubectl apply -f awx-demo.yml
-The AWX Operator will create and manage the associated application resources, including the web, task, database, and service resources.
+```
 
-10. Monitor the AWX Installation
+The AWX Operator will create and manage the application resources.
+
+## Step 10: Monitor AWX Installation
+
 Watch the pods:
 
-
+```bash
 kubectl get pods -n awx -w
-Wait for the AWX web and task pods to finish initializing.
+```
 
-Check the custom resource:
+Check the AWX resource:
 
-
+```bash
 kubectl get awx -n awx
 kubectl describe awx awx-demo -n awx
-Review the operator logs:
+```
 
+Check the operator logs:
 
+```bash
 kubectl logs \
   -n awx \
   deployment/awx-operator-controller-manager \
   -c awx-manager \
   --tail=100
-Check services and persistent volumes:
+```
 
+Inspect services, storage, and endpoints:
 
+```bash
 kubectl get services -n awx
 kubectl get pvc -n awx
 kubectl get endpoints awx-demo-service -n awx
 kubectl get pods -n awx -o wide
-Expected pod status
-Depending on the version and configuration, the main application pods should eventually become ready.
+```
 
+### Expected Status
 
-Resource	Expected state
-PostgreSQL pod	Running
-AWX task pod	All containers ready
-AWX web pod	All containers ready
-AWX operator pod	All containers ready
-The exact number of containers may differ between versions.
+| Resource | Expected State |
+|---|---|
+| PostgreSQL pod | `Running` |
+| AWX task pod | All containers ready |
+| AWX web pod | All containers ready |
+| AWX operator pod | All containers ready |
 
-Initialization note: The first AWX deployment can take several minutes. Wait for the AWX custom resource and application pods to become ready rather than relying on a fixed waiting period. If the web interface remains on “AWX is currently upgrading,” inspect the resource status and logs.
-11. Retrieve the AWX Admin Password
-The AWX Operator creates an admin password secret for the instance.
+The number of containers may vary by version.
 
-Retrieve it with:
+> The first deployment can take several minutes. Wait for the AWX resource and application pods to become ready. If the interface remains on “AWX is currently upgrading,” inspect the AWX resource and application logs.
 
+## Step 11: Retrieve the AWX Administrator Password
 
+```bash
 kubectl get secret awx-demo-admin-password \
   -n awx \
   -o jsonpath='{.data.password}' \
   | base64 --decode
 
 echo
-Keep the password private. Do not commit it to GitHub, include it in screenshots, or paste it into public issue reports.
+```
 
-The default AWX administrator username is typically:
+The default administrator username is generally:
 
-
+```text
 admin
-12. Access the AWX Web Interface
-First, verify that the web pod and service are ready:
+```
 
+**Security:** Do not commit the password to GitHub or expose it in screenshots, logs, or public issues.
 
+## Step 12: Access the AWX Web Interface
+
+Check that the service has ready endpoints:
+
+```bash
 kubectl get pods -n awx
 kubectl get svc awx-demo-service -n awx
 kubectl get endpoints awx-demo-service -n awx
-Start the Minikube service helper:
+```
 
+Get the service URL:
 
+```bash
 minikube service -n awx awx-demo-service --url
+```
+
 Open the URL printed by Minikube in your Windows browser.
 
-Log in using:
+Log in with:
 
+| Field | Value |
+|---|---|
+| Username | `admin` |
+| Password | The password retrieved in Step 11 |
 
-Field	Value
-Username	admin
-Password	The password retrieved in Step 11
-Keep the terminal running if Minikube provides a temporary forwarding process. If the connection fails, check the pod readiness and service endpoints before retrying.
+Keep the terminal running if Minikube uses a temporary forwarding process.
 
-🧰 Troubleshooting
-1. ImagePullBackOff or ErrImagePull
-Inspect the affected pod:
+---
 
+## 🔍 Troubleshooting
 
+### ImagePullBackOff or ErrImagePull
+
+```bash
 kubectl get pods -n awx
 kubectl describe pod <pod-name> -n awx
-Check the Events section for the exact image name and pull error.
+```
 
-Common causes include:
+Inspect the `Events` section for the exact image name and error.
 
-Incorrect image name or tag.
-Registry connectivity problems.
-Authentication failures.
-Unsupported image architecture.
-2. SVC_UNREACHABLE
-If Minikube reports that no running pod is available for the AWX service, inspect the endpoints:
+Common causes include invalid tags, registry connectivity, missing credentials, and incompatible image architecture.
 
+### Minikube Reports SVC_UNREACHABLE
 
+```bash
 kubectl get endpoints awx-demo-service -n awx
-An empty endpoint list generally indicates that no ready pods match the service selector.
-
-Check pod status and events:
-
-
 kubectl get pods -n awx -o wide
-kubectl describe awx awx-demo -n awx
-3. AWX remains on “AWX is currently upgrading”
-Inspect the AWX resource and web logs:
+```
 
+If there are no endpoints, the service has no matching ready pods.
 
+### AWX Remains on the Upgrade Page
+
+```bash
 kubectl get awx awx-demo -n awx
 
 kubectl logs deployment/awx-demo-web \
   -n awx \
   --all-containers=true \
   --tail=100
-Also check the task pod if required:
+```
 
+Check the task pod logs if necessary:
 
+```bash
 kubectl logs deployment/awx-demo-task \
   -n awx \
   --all-containers=true \
   --tail=100
-Look for database migration errors, failed initialization tasks, and application exceptions.
+```
 
-4. AWX pods remain in ContainerCreating
-Inspect the affected pod:
+### Pods Remain in ContainerCreating
 
-
+```bash
 kubectl describe pod <pod-name> -n awx
-Check for image downloads, volume mounts, storage issues, or resource constraints.
+```
 
-5. Minikube is not running
-Check the cluster:
+Look for image download problems, volume mounts, storage issues, and resource constraints.
 
+### Minikube Is Not Running
 
+```bash
 minikube status
 kubectl get nodes
-If the cluster is stopped, start it again:
+```
 
+If the cluster is stopped:
 
+```bash
 minikube start --driver=docker
-6. Docker is unavailable in WSL2
-Verify Docker connectivity:
+```
 
+---
 
-docker version
-docker info
-If these commands fail, verify that Docker Engine or Docker Desktop is running and that WSL integration is enabled where applicable.
+## 📋 Useful Commands
 
-📋 Useful Commands
+| Purpose | Command |
+|---|---|
+| Check Minikube | `minikube status` |
+| List Kubernetes nodes | `kubectl get nodes` |
+| List AWX pods | `kubectl get pods -n awx` |
+| List AWX services | `kubectl get svc -n awx` |
+| Check AWX status | `kubectl get awx awx-demo -n awx` |
+| Check persistent volumes | `kubectl get pvc -n awx` |
+| View operator logs | `kubectl logs -n awx deployment/awx-operator-controller-manager -c awx-manager --tail=100` |
+| Open AWX | `minikube service -n awx awx-demo-service --url` |
 
-Purpose	Command
-Check Minikube	minikube status
-List Kubernetes nodes	kubectl get nodes
-List AWX pods	kubectl get pods -n awx
-List AWX services	kubectl get svc -n awx
-Inspect AWX status	kubectl get awx awx-demo -n awx
-Inspect persistent volumes	kubectl get pvc -n awx
-Follow operator logs	kubectl logs -n awx deployment/awx-operator-controller-manager -c awx-manager -f
-Open the AWX service	minikube service -n awx awx-demo-service --url
-📁 Project Structure
-The lab directory should look like this:
+---
 
+## 📁 Project Structure
 
+```text
 awx-lab/
 ├── operator/
 │   └── kustomization.yaml
 └── instance/
     └── awx-demo.yml
-File descriptions
-operator/kustomization.yaml — Defines the AWX Operator version and Kubernetes resources.
-instance/awx-demo.yml — Defines the AWX custom resource and service configuration.
-🔐 Security Notes
-Do not commit passwords, tokens, private keys, or Kubernetes secrets.
-Keep the AWX administrator password in a secure password manager.
-Do not expose the AWX NodePort to untrusted networks.
-Use appropriate authentication, TLS, backups, and access controls for shared environments.
-Keep Kubernetes, Minikube, the AWX Operator, and AWX versions compatible.
-Review upstream release notes before upgrading pinned versions.
-Production deployments require additional design and security controls. A local Minikube cluster is intended for learning and testing, not high availability or production workloads.
+```
 
-📖 Learning Resources
-Ansible AWX
-AWX Operator
-AWX Operator Documentation
-Ansible Documentation
-Kubernetes Documentation
-Minikube Documentation
-Install WSL
-Docker Documentation
-🤝 Contributing
+| File | Description |
+|---|---|
+| `operator/kustomization.yaml` | Defines the AWX Operator resources and version |
+| `instance/awx-demo.yml` | Defines the AWX instance and service configuration |
+
+---
+
+## 🔐 Security Notes
+
+- Never commit passwords, API tokens, private keys, or Kubernetes secrets.
+- Store administrator credentials securely.
+- Do not expose the AWX NodePort to untrusted networks.
+- Use TLS, backups, authentication, and appropriate access controls for shared environments.
+- Review compatibility and release notes before upgrading Kubernetes or AWX components.
+
+A local Minikube environment is intended for learning and testing, not high availability or production workloads.
+
+---
+
+## 📖 Learning Resources
+
+- [Ansible AWX](https://github.com/ansible/awx)
+- [AWX Operator](https://github.com/ansible/awx-operator)
+- [AWX Operator Documentation](https://ansible.readthedocs.io/projects/awx-operator/en/latest/)
+- [Ansible Documentation](https://docs.ansible.com/)
+- [Kubernetes Documentation](https://kubernetes.io/docs/)
+- [Minikube Documentation](https://minikube.sigs.k8s.io/docs/)
+- [Install WSL](https://learn.microsoft.com/windows/wsl/install)
+- [Docker Documentation](https://docs.docker.com/)
+
+---
+
+## 🤝 Contributing
+
 Contributions, corrections, and suggestions are welcome.
 
-Fork this repository.
-Create a feature branch.
-Make your changes and test the commands.
-Submit a pull request describing your improvements.
+1. Fork this repository.
+2. Create a feature branch.
+3. Make your changes and test the commands.
+4. Submit a pull request describing your improvements.
+
 If you need GitHub links or additional commands, please leave a comment below.
 
-📄 License
-Add a LICENSE file to this repository before specifying a license here. If you intend to publish the project as open source, choose a license appropriate for your intended use.
+---
+
+## 📄 License
+
+Add a `LICENSE` file to this repository before specifying a license.
+
+---
 
 ⭐ If this guide helps you deploy AWX successfully, consider starring the repository and sharing it with other automation learners.
